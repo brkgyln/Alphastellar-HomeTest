@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Business
 {
-    public class VehicleManager : IBusService, ICarService, IBoatService
+    public class VehicleManager:IBaseService 
     {
         IBoatRepo _boatRepo;
         IBusRepo _busRepo;
