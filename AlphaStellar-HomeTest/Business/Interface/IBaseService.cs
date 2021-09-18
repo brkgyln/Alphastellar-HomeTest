@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Business.Interface
 {
-    public interface IRepositoryWrapper
+    public interface IBaseService:IBoatService,IBusService,ICarService
     {
-        IBoatService Boat { get; }
-        IBusService Bus { get; }
-        ICarService Car { get; }
+       
 
     }
 }

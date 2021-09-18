@@ -1,10 +1,5 @@
-﻿using Business;
+﻿using Business.Interface;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AlphaStellar_HomeTest.Controllers
 {
@@ -12,59 +7,53 @@ namespace AlphaStellar_HomeTest.Controllers
     [Route("[controller]/[action]")]
     public class VehicleController : ControllerBase
     {
-        private readonly ICarService _carService;
-        private readonly IBoatService _boatService;
-        private readonly IBusService _busService;
+        private readonly IBaseService _service;
 
-
-        public VehicleController(ICarService carService, IBoatService boatService, IBusService busService)
+        public VehicleController(IBaseService service)
         {
-            _carService = carService;
-            _boatService = boatService;
-            _busService = busService;
-
+            _service = service;
+           
         }
-
 
         [HttpGet]
         public IActionResult GetAllCarList()
         {
-            var res = _carService.GetAllCarList();
+            var res = _service.GetAllCarList();
             return Ok(res);
         }
 
         [HttpGet]
         public IActionResult GetCarListByColor(string color)
         {
-            var res = _carService.GetCarListByColor(color);
+            var res = _service.GetCarListByColor(color);
             return Ok(res);
         }
 
         [HttpPost]
         public IActionResult TurnOnOrOffTheLights(int id)
         {
-            var res = _carService.SetChangeHeadlightStatusByCarId(id);
+            var res = _service.SetChangeHeadlightStatusByCarId(id);
             return Ok(res);
         }
 
         [HttpDelete]
         public IActionResult RemoveCarById(int id)
         {
-            var res = _carService.RemoveCarById(id);
+            var res = _service.RemoveCarById(id);
             return Ok(res);
         }
 
         [HttpGet]
         public IActionResult GetBusListByColor(string color)
         {
-            var res = _busService.GetBusListByColor(color);
+            var res = _service.GetBusListByColor(color);
             return Ok(res);
         }
 
         [HttpGet]
         public IActionResult GetBoatListByColortBoat(string color)
         {
-            var res = _boatService.GetBoatListByColor(color);
+            var res = _service.GetBoatListByColor(color);
             return Ok(res);
         }
 
