@@ -7,9 +7,10 @@ namespace Business
 {
     public interface ICarService
     {
+        IEnumerable<Car> GetAllCarList();
         IEnumerable<Car> GetCarListByColor(string color);
-        bool SetChangeHeadlightStatusByCarId(Guid id);
-        bool RemoveCarById(Guid id);
+        bool SetChangeHeadlightStatusByCarId(int id);
+        bool RemoveCarById(int id);
     
     }
 }

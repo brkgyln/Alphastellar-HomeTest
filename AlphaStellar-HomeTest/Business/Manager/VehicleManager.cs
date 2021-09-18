@@ -19,6 +19,32 @@ namespace Business
             _carRepo = carRepo;
 
         }
+
+        #region Car
+        public IEnumerable<Car> GetAllCarList()
+        {
+            var res = _carRepo.GetAllCarList();
+            return res;
+        }
+        public bool SetChangeHeadlightStatusByCarId(int id)
+        {
+            var res = _carRepo.SetChangeHeadlightStatusByCarId(id);
+            return res;
+        }
+        public IEnumerable<Car> GetCarListByColor(string color)
+        {
+            var res = _carRepo.GetCarListByColor(color);
+            return res;
+        }
+
+        public bool RemoveCarById(int id)
+        {
+            var res = _carRepo.RemoveCarById(id);
+            return res;
+        }
+        #endregion
+
+        #region Boat
         public IEnumerable<Boat> GetBoatListByColor(string color)
 
         {
@@ -26,30 +52,16 @@ namespace Business
             return res;
 
         }
+        #endregion
 
+        #region Bus
         public IEnumerable<Bus> GetBusListByColor(string color)
         {
             var res = _busRepo.GetBusListByColor(color);
             return res;
 
         }
+        #endregion
 
-        public IEnumerable<Car> GetCarListByColor(string color)
-        {
-           var res= _carRepo.GetCarListByColor(color);
-           return res;
-        }
-
-        public bool RemoveCarById(Guid id)
-        {
-            var res = _carRepo.RemoveCarById(id);
-            return res;
-        }
-
-        public bool SetChangeHeadlightStatusByCarId(Guid id)
-        {
-            var res = _carRepo.SetChangeHeadlightStatusByCarId(id);
-            return res;
-        }
     }
 }
