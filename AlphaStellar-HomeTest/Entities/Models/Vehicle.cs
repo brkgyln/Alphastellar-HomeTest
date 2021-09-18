@@ -9,8 +9,7 @@ namespace Entities
 {
     public abstract class Vehicle
     {
-        [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         [Required]
         [MaxLength(32)]
         public string Color { get; set; }

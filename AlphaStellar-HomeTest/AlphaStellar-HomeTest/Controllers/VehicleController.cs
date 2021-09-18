@@ -25,6 +25,14 @@ namespace AlphaStellar_HomeTest.Controllers
 
         }
 
+
+        [HttpGet]
+        public IActionResult GetAllCarList()
+        {
+            var res = _carService.GetAllCarList();
+            return Ok(res);
+        }
+
         [HttpGet]
         public IActionResult GetCarListByColor(string color)
         {
@@ -33,14 +41,14 @@ namespace AlphaStellar_HomeTest.Controllers
         }
 
         [HttpPost]
-        public IActionResult TurnOnOrOffTheLights([FromQuery] Guid id)
+        public IActionResult TurnOnOrOffTheLights(int id)
         {
             var res = _carService.SetChangeHeadlightStatusByCarId(id);
             return Ok(res);
         }
 
         [HttpDelete]
-        public IActionResult RemoveCarById(Guid id)
+        public IActionResult RemoveCarById(int id)
         {
             var res = _carService.RemoveCarById(id);
             return Ok(res);
