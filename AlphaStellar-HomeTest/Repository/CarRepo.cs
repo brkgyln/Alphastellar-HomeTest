@@ -16,11 +16,11 @@ namespace Repository
             new Car { Id =3, Color = Colors.Black, Brand = "Scoda", Headlight = true, WheelsNumber = 4 },
             new Car { Id =4, Color = Colors.White, Brand = "Mercedes", Headlight = true, WheelsNumber = 2 },
             new Car { Id =5, Color = Colors.White, Brand = "Audi", Headlight = true, WheelsNumber = 2 },
-            new Car { Id =6, Color = Colors.Black, Brand = "Renault", Headlight = true, WheelsNumber = 3 },
-            new Car { Id =7, Color = Colors.Red, Brand = "Toyota", Headlight = true, WheelsNumber = 3 },
+            new Car { Id =6, Color = Colors.Black, Brand = "Renault", Headlight = false, WheelsNumber = 3 },
+            new Car { Id =7, Color = Colors.Red, Brand = "Toyota", Headlight = false, WheelsNumber = 3 },
             new Car { Id =8, Color = Colors.White, Brand = "Mercedes", Headlight = true, WheelsNumber = 4 },
-            new Car { Id =9, Color = Colors.Blue, Brand = "Mercedes", Headlight = true, WheelsNumber = 4 },
-            new Car { Id =10, Color = Colors.Red, Brand = "Honda", Headlight = true, WheelsNumber = 4 }
+            new Car { Id =9, Color = Colors.Blue, Brand = "Mercedes", Headlight = false, WheelsNumber = 4 },
+            new Car { Id =10, Color = Colors.Red, Brand = "Honda", Headlight = false, WheelsNumber = 4 }
 
 
         };
